@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 /**
  *
  * @author andreendo
@@ -56,7 +58,7 @@ public class Menu extends BasePage {
         if(! menuOption.isDisplayed()) {
             menuButton.click();
         }
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until( ExpectedConditions.elementToBeClickable(menuOption) );
         menuOption.click();
     }

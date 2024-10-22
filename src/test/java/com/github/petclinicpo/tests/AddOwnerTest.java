@@ -79,7 +79,8 @@ public class AddOwnerTest {
                 .addInvalidData();
         
         assertEquals(1, editOwnerPage.getNumberOfErrors());
-        assertTrue(editOwnerPage.getErrorMessage(0).endsWith("must not be empty"));
+        assertTrue(editOwnerPage.getErrorMessage(0).endsWith("must not be empty") ||
+                    editOwnerPage.getErrorMessage(0).endsWith("não deve estar vazio"));
     }
     
     @Test

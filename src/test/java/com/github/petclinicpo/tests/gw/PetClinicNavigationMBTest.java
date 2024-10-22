@@ -2,6 +2,7 @@ package com.github.petclinicpo.tests.gw;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.graphwalker.core.machine.ExecutionContext;
@@ -33,7 +34,7 @@ public class PetClinicNavigationMBTest extends ExecutionContext implements PetCl
         chromeOptions.addArguments("window-size=1200x600");
         chromeOptions.addArguments("start-maximized");
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         
         currentPage = new HomePage(driver);
 	}
